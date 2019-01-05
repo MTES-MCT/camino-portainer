@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    environment:
+      VIRTUAL_HOST: portainer.camino.beta.gouv.fr
+      VIRTUAL_PORT: ${PORTAINER_PORT}
+      LETSENCRYPT_HOST: portainer.camino.beta.gouv.fr
+      LETSENCRYPT_EMAIL: francoisromain@gmail.com
+    expose:
+      - ${PORTAINER_PORT}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data: {}
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

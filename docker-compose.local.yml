@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    environment:
+      VIRTUAL_HOST: portainer.local
+      VIRTUAL_PORT: ${PORTAINER_PORT}
+    expose:
+      - ${PORTAINER_PORT}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data: {}
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
