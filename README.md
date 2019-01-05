@@ -17,14 +17,13 @@
 
 ```bash
 # démarre Portainer dans un conteneur Docker
-# en mode `development`
 # accessible à http://localhost:PORTAINER_PORT
 docker-compose -f ./docker-compose.localhost.yml up --build
 ```
 
 ### Environnement de test
 
-Pour lancer Portainer en local dans un environnement de production
+Pour utiliser Portainer en local dans un environnement de production
 
 Pré-requis:
 
@@ -34,7 +33,6 @@ Pré-requis:
 
 ```bash
 # démarre Portainer dans un container Docker
-# en mode `production`
 # accessible à https://portainer.local
 docker-compose -f ./docker-compose.local.yml up --build
 ```
@@ -48,8 +46,7 @@ Pré-requis:
 
 ```bash
 # démarre Portainer dans un container Docker
-# en mode `production`
-# accessible à http://api.camino.beta.gouv.fr
+# accessible à http://portainer.camino.beta.gouv.fr
 docker-compose -f ./docker-compose.prod.yml up -d --build
 ```
 
