@@ -1,6 +1,6 @@
 # Camino Portainer
 
-> Instance Portainer de [Camino](http://portainer.camino.beta.gouv.fr/)
+> Instance Portainer de [Camino](http://camino.beta.gouv.fr/)
 
 ---
 
