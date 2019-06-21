@@ -5,7 +5,7 @@ services:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
     environment:
-      VIRTUAL_HOST: portainer.local
+      VIRTUAL_HOST: ${URL}
       VIRTUAL_PORT: ${PORTAINER_PORT}
     expose:
       - ${PORTAINER_PORT}
